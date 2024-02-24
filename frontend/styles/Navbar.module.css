@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 7vw;
+  justify-content: space-evenly;
+  width: 100vw;
+  color: inherit;
+  align-items: center;
+  list-style: none;
+  font-size: x-large;
+  text-decoration: none;
+
+  background: rgb(240, 70, 70);
+  background: linear-gradient(
+    156deg,
+    rgba(240, 70, 70, 1) 25%,
+    rgba(130, 0, 255, 1) 100%
+  );
+  border-radius: 40px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 70vw;
+}
+
+.contText {
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-items: center;
+  height: 4vw;
+}
+
+.text {
+  width: 50%;
+  border-radius: 15px;
+  height: 1.5vw;
+  border-color: none;
+  list-style: none;
+  padding: 5px;
+}
