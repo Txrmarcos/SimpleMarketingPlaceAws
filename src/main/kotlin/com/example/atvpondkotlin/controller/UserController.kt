@@ -54,7 +54,6 @@ data class UserController(
     @PutMapping("/user/{id}")
     fun attUser(@PathVariable(value="id") id:String, @RequestBody @Valid userDto: UserDto) : ResponseEntity<Any>? {
         val userAtt : Optional<UserModel> = userRepositories.findByEmail(id)
-        val userModel= UserModel(name = userDto.name, email = userDto.email, saldo = userDto.saldo)
         if (userAtt.isEmpty){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
 
