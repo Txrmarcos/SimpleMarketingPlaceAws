@@ -16,7 +16,7 @@ export default function Register() {
         senha: ""
     });
 
-    const handleChange = (e:any) => {
+    const handleChange = (e: any) => {
         const { name, value, email } = e.target;
         console.log(e.target.value);
         setFormData(prevState => ({
@@ -29,8 +29,8 @@ export default function Register() {
 
     const handleSubmit = async () => {
         try {
-            await axios.post("http://0.0.0.0:8081/user", formData)
-    
+            await axios.post("http://34.203.29.179:8081/user", formData)
+
         } catch (error) {
             console.error('Erro ao enviar formulário:', formData);
         }
