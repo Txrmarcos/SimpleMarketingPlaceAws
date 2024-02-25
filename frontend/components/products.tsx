@@ -63,15 +63,15 @@ export default function Products(): any {
         });
     }
 
-    function objectCard(att: number, idUser: string,price:number) {
+    function objectCard(att: number, idUser: string, price: number) {
 
 
 
-        axios.post("http://localhost:8081/cart", {
+        axios.post("http://0.0.0.0:8081/cart", {
             "userId": idUser,
             "productId": itemId,
             "nItens": att,
-            "price":price
+            "price": price
         }).then(function (response: any) {
             console.log("response aqui do carrinho com user automatico")
             console.log(response);
@@ -82,7 +82,7 @@ export default function Products(): any {
 
     async function findUser() {
         try {
-            const user = await axios.get(`http://localhost:8081/user/marcos@gmail.com`)
+            const user = await axios.get(`http://0.0.0.0:8081/user/marcos@gmail.com`)
             const userId = user.data.id;
             setUserId(userId)
 
@@ -117,7 +117,7 @@ export default function Products(): any {
                                     <button onClick={() => decrementQuantity(product.id)}>-</button>
                                     <button onClick={() => incrementQuantity(product.id)}>+</button>
                                 </div>
-                                <Link href="/cart"><button className={styles.btt} onClick={() => { objectCard(nItens, userId,product.price); }}>Comprar</button></Link>
+                                <Link href="/cart"><button className={styles.btt} onClick={() => { objectCard(nItens, userId, product.price); }}>Comprar</button></Link>
                             </div>
                         ))
                     }
