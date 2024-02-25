@@ -67,7 +67,7 @@ export default function Products(): any {
 
 
 
-        axios.post("http://34.203.29.179:8081/cart", {
+        axios.post("http://127.0.0.1:8081/cart", {
             "userId": idUser,
             "productId": itemId,
             "nItens": att,
@@ -82,7 +82,7 @@ export default function Products(): any {
 
     async function findUser() {
         try {
-            const user = await axios.get(`http://34.203.29.179:8081/user/marcos@gmail.com`)
+            const user = await axios.get(`http://127.0.0.1:8081/user/marcos@gmail.com`)
             const userId = user.data.id;
             setUserId(userId)
 

@@ -18,7 +18,7 @@ export default function Product() {
     async function findUser(email: String, debito: number) {
         const email_ = email
         try {
-            const user = await axios.get(`http://34.203.29.179:8081/user/${email}`)
+            const user = await axios.get(`http://127.0.0.1:8081/user/${email}`)
             const userId = user.data.id;
             await cart(userId, email)
             setSaldo(user.data.saldo)
@@ -36,7 +36,7 @@ export default function Product() {
         const email_ = email
 
         try {
-            const carrinho = await axios.get(`http://34.203.29.179:8081/cart/${uuid}`)
+            const carrinho = await axios.get(`http://127.0.0.1:8081/cart/${uuid}`)
 
             setMyId(uuid)
             const nCarrinhos = carrinho.data
@@ -84,7 +84,7 @@ export default function Product() {
     async function newWallet(): Promise<any> {
         try {
             console.log("entrou no new wallert")
-            const debito = await axios.get(`http://34.203.29.179:8081/carts`)
+            const debito = await axios.get(`http://127.0.0.1:8081/carts`)
             const data = debito.data
             const allValues = data.map((sum: any) => { console.log(sum.price); return sum.price; })
             const sum = allValues.reduce((acc: any, curr: any) => acc + curr, 0)
@@ -102,7 +102,7 @@ export default function Product() {
 
     async function deleteCart(uuid: UUID) {
         try {
-            await axios.delete(`http://34.203.29.179:8081/cart/${uuid}`)
+            await axios.delete(`http://127.0.0.1:8081/cart/${uuid}`)
 
 
         } catch (error) {
@@ -117,7 +117,7 @@ export default function Product() {
 
         try {
             console.log("entrou aqui", productId, price, email,)
-            await axios.post(`http://34.203.29.179:8081/buy`, {
+            await axios.post(`http://127.0.0.1:8081/buy`, {
                 productId: productId,
                 nItens: quant,
                 email: email_,
