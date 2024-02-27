@@ -15,7 +15,7 @@ export default function Product() {
     async function findUser() {
         try {
             const email = "marcos@gmail.com"
-            const user = await axios.get(`http://54.172.167.157:8081/user/${email}`)
+            const user = await axios.get(`http://127.0.0.1:8081/user/${email}`)
             await cart(email)
             setSaldo(user.data.saldo)
             setName(user.data.name)
@@ -32,7 +32,7 @@ export default function Product() {
 
     async function cart(email: String) {
         try {
-            const carrinho = await axios.get(`http://54.172.167.157:8081/buy/${email}`)
+            const carrinho = await axios.get(`http://127.0.0.1:8081/buy/${email}`)
             const nCarrinhos = carrinho.data
             const itens = nCarrinhos.map((item: any) => item.productId)
             const quant = nCarrinhos.map((item: any) => item.nitens)
