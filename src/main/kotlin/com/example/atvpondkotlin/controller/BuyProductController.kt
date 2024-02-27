@@ -14,7 +14,7 @@ import java.util.UUID
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = ["http://54.172.167.157"])
 data class BuyProductController(
     val buyProductRepositories: BuyProductRepositories,
     val userProductModel: UserRepositories

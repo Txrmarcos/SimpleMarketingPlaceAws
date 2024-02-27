@@ -29,7 +29,7 @@ export default function Register() {
 
     const handleSubmit = async () => {
         try {
-            await axios.post("http://127.0.0.1:8081/user", formData)
+            await axios.post("http://54.172.167.157:8081/user", formData)
 
         } catch (error) {
             console.error('Erro ao enviar formulário:', formData);
