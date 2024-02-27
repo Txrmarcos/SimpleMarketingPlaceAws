@@ -14,7 +14,7 @@ data class LoginController (
     val userRepositories: UserRepositories
 ){
 
-    @PostMapping("/pedro")
+    @PostMapping("/login")
     fun atLogin(@RequestBody @Valid login: LoginDto): ResponseEntity<Any> {
         val register: Optional<UserModel> = userRepositories.findById(login.id)
         if(register.isEmpty){
